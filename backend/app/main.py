@@ -16,6 +16,14 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.get("/")
+def root() -> dict[str, str]:
+    """Root endpoint returning API status."""
+    return {"status": "ok", "service": "JCET CampusIQ API"}
+
+
 app.include_router(health_router, prefix="/api")
 app.include_router(auth_router, prefix="/api")
 app.include_router(documents_router, prefix="/api")
