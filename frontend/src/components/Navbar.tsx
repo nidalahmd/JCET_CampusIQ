@@ -48,16 +48,7 @@ export function Navbar({ currentView, onNavigate }: NavbarProps) {
           </div>
         </button>
 
-        {/* Health status badge */}
-        <div className="health-badge-wrapper">
-          <span className={`health-pill ${healthStatus}`}>
-            <span className="health-indicator-dot" />
-            {healthStatus === "connected" && "System Online"}
-            {healthStatus === "checking" && "Connecting..."}
-            {healthStatus === "offline" && "System Offline"}
-          </span>
-        </div>
-
+        
         {/* Navigation & User Actions */}
         <div className="navbar-actions">
           <button
