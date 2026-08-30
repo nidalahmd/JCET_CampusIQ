@@ -6,111 +6,84 @@ JCET CampusIQ is a Retrieval-Augmented Generation (RAG) platform designed to hel
 
 ## 🎯 Problem Statement
 
-Educational institutions generate and maintain a large amount of institutional information such as academic documents, notices, policies, guidelines, and other official resources. However, this information is often distributed across different sources, making it difficult for students and staff to quickly find reliable and relevant information.
+Students and staff often need to search through scattered college documents to find information about academics, examinations, admissions, regulations, library rules, and other institutional policies. Traditional document searching can be time-consuming and may make it difficult to identify the exact official source for an answer.
 
-JCET CampusIQ aims to address this problem by providing a centralized institutional knowledge platform where users can access and interact with campus-related information through a structured and intelligent interface.
-
-### Key Problems Addressed
-
-- 📚 **Scattered Information**  
-  Institutional information may be distributed across multiple documents and sources, making it difficult to locate.
-
-- 🔎 **Difficulty Finding Relevant Information**  
-  Users may spend significant time manually searching through lengthy documents to find specific information.
-
-- 🤖 **Limited Intelligent Access**  
-  Traditional document repositories provide storage but do not offer an intelligent way to retrieve and understand relevant information.
-
-- 🏫 **Lack of a Centralized Knowledge Platform**  
-  Students and staff need a single platform for accessing reliable institutional knowledge.
-
-- 🔐 **Future Institutional Access Requirements**  
-  Different types of users may require different levels of access to institutional resources.
-
-### Proposed Solution
-
-JCET CampusIQ is designed as a centralized institutional knowledge platform that combines a modern web interface with a FastAPI backend, PostgreSQL database, and pgvector-based infrastructure. The platform is being developed to support document ingestion, semantic retrieval, source-based responses, citations, and controlled institutional access.
-
-The current implementation establishes the foundational architecture required to build these capabilities in later development phases.
+JCET CampusIQ addresses this problem by providing a centralized AI-powered institutional knowledge platform. It uses Retrieval-Augmented Generation (RAG) and semantic search to retrieve relevant information from official JCET documents and provide source-grounded answers with citations. This helps users find reliable institutional information faster while keeping the factual foundation tied to approved documents.
 
 ## 🌐 Live Application
 
-Frontend: https://jcet-campus-iq.vercel.app/
+**Frontend:** https://jcet-campus-iq.vercel.app/
 
-Backend API: https://jcet-campusig-backend.onrender.com/
+**Backend API:** https://jcet-campusiq-backend.onrender.com/
 
-API Documentation: https://jcet-campusig-backend.onrender.com/docs
+**API Documentation:** https://jcet-campusiq-backend.onrender.com/docs
 
-GitHub Repository: https://github.com/nidalahmd/JCET_CampusIQ
+**GitHub Repository:** https://github.com/nidalahmd/JCET_CampusIQ
 
-✨ Key Features
+## ✨ Key Features
 
-🤖 AI-powered institutional question answering
+- 🤖 AI-powered institutional question answering
+- 🔎 Retrieval-Augmented Generation (RAG)
+- 📚 Document-based knowledge retrieval
+- 🔗 Source-grounded responses and citations
+- 🛡️ Role-based access control
+- 🗂️ Institutional document management
+- 🧠 Semantic search with PostgreSQL and pgvector
+- ❤️ Backend and database health monitoring
+- 🔐 Environment-based configuration
 
-🔎 Retrieval-Augmented Generation (RAG)
+## 🛠️ Tech Stack
 
-📚 Document-based knowledge retrieval
+### Frontend
+- React
+- TypeScript
+- Vite
+- CSS
 
-🔗 Source-grounded responses and citations
+### Backend
+- Python
+- FastAPI
+- SQLAlchemy
+- Alembic
+- Uvicorn
 
-🛡️ Role-based access control
+### Database
+- PostgreSQL
+- pgvector
 
-🗂️ Institutional document management
+### AI / RAG
+- Retrieval-Augmented Generation
+- Vector-based semantic retrieval
+- Gemini
 
-🧠 Semantic search with PostgreSQL and pgvector
+### Deployment
+- Vercel — Frontend
+- Render — Backend
+- GitHub — Source Code
 
-❤️ Backend and database health monitoring
+## 📸 Screenshots
 
-🔐 Environment-based configuration
+### 🏠 Home / Landing Page
 
-🛠️ Tech Stack
+The main JCET CampusIQ landing page introduces the institutional knowledge platform and provides access to the AI assistant and workspace.
 
-Frontend
+![JCET CampusIQ Home Page](screenshots/home.png)
 
-React
+### 💬 Ask CampusIQ
 
-TypeScript
+The AI question-answering interface where students can ask questions about official JCET academic, examination, regulatory, library, and institutional information.
 
-Vite
+![Ask CampusIQ Interface](screenshots/ask-campus-iq.png)
 
-CSS
+### 📚 Dashboard / Official Knowledge Base
 
-Backend
+The dashboard displays the indexed official knowledge base, including verified academic, admissions, examination, regulation, brochure, and library documents.
 
-Python
+![JCET CampusIQ Knowledge Base Dashboard](screenshots/dashboard.png)
 
-FastAPI
+## 🏗️ System Architecture
 
-SQLAlchemy
-
-Alembic
-
-Uvicorn
-
-Database
-
-PostgreSQL
-
-pgvector
-
-AI / RAG
-
-Retrieval-Augmented Generation
-
-Vector-based semantic retrieval
-
-Gemini
-
-Deployment
-
-Vercel — Frontend
-
-Render — Backend
-
-GitHub — Source Code
-
-🏗️ System Architecture
-
+```text
                          ┌─────────────────────┐
                          │        User         │
                          └──────────┬──────────┘
@@ -136,8 +109,9 @@ GitHub — Source Code
           │    PostgreSQL    │             │     pgvector     │
           │     Database     │             │  Vector Search   │
           └──────────────────┘             └──────────────────┘
+```
 
-📁 Project Structure
+## 📁 Project Structure
 
 ```text
 JCET_CampusIQ/
@@ -173,130 +147,171 @@ JCET_CampusIQ/
 └── start.ps1
 ```
 
-🚀 Local Setup
+## 🚀 Local Setup
 
-1. Clone the Repository
+### 1. Clone the Repository
 
+```bash
 git clone https://github.com/nidalahmd/JCET_CampusIQ.git
 cd JCET_CampusIQ
+```
 
-2. Database Setup
+### 2. Database Setup
 
-JCET CampusIQ uses PostgreSQL with the pgvector extension.
+JCET CampusIQ uses PostgreSQL with the `pgvector` extension.
 
-Create a PostgreSQL database, enable the vector extension, and configure the database connection in backend/.env.
+Create a PostgreSQL database, enable the `vector` extension, and configure the database connection in `backend/.env`.
 
+```env
 DATABASE_URL=postgresql+psycopg://USER:PASSWORD@HOST:5432/DATABASE
+```
 
-Do not commit real credentials or .env files containing secrets.
+Do not commit real credentials or `.env` files containing secrets.
 
-3. Backend Setup
+### 3. Backend Setup
 
 Create a virtual environment:
 
+```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
+```
 
 Install dependencies:
 
+```powershell
 python -m pip install -r backend/requirements.txt
+```
 
 Create the environment file:
 
+```powershell
 Copy-Item backend/.env.example backend/.env
+```
 
 Run database migrations:
 
+```powershell
 Set-Location backend
 alembic upgrade head
+```
 
 Start the backend:
 
+```powershell
 uvicorn app.main:app --reload --port 8000
+```
 
 Backend:
 
+```text
 http://localhost:8000
+```
 
-4. Frontend Setup
+### 4. Frontend Setup
 
 Open another terminal from the project root:
 
+```powershell
 Set-Location frontend
 npm install
+```
 
 Create the frontend environment file:
 
+```powershell
 Copy-Item .env.example .env
+```
 
-Set the API URL in frontend/.env:
+Set the API URL in `frontend/.env`:
 
+```env
 VITE_API_URL=http://localhost:8000
+```
 
 Start the frontend:
 
+```powershell
 npm run dev
+```
 
 Frontend:
 
+```text
 http://localhost:5173
+```
 
-❤️ Health Checks
+## ❤️ Health Checks
 
 The backend provides health endpoints for monitoring API and database connectivity.
 
-API Health
+### API Health
 
-https://jcet-campusig-backend.onrender.com/api/health
+```text
+https://jcet-campusiq-backend.onrender.com/api/health
+```
 
-Database Health
+### Database Health
 
-https://jcet-campusig-backend.onrender.com/api/health/db
+```text
+https://jcet-campusiq-backend.onrender.com/api/health/db
+```
 
-API Documentation
+### API Documentation
 
-https://jcet-campusig-backend.onrender.com/docs
+```text
+https://jcet-campusiq-backend.onrender.com/docs
+```
 
-🔐 Environment Variables
+## 🔐 Environment Variables
 
-Frontend
+### Frontend
 
-VITE_API_URL=https://jcet-campusig-backend.onrender.com
+```env
+VITE_API_URL=https://jcet-campusiq-backend.onrender.com
+```
 
 For local development:
 
+```env
 VITE_API_URL=http://localhost:8000
+```
 
-Backend
+### Backend
 
+```env
 DATABASE_URL=postgresql+psycopg://USER:PASSWORD@HOST:5432/DATABASE
+```
 
 Production environment variables should be configured through the hosting platform rather than committed to GitHub.
 
-🌍 Deployment
+## 🌍 Deployment
 
-Frontend — Vercel
+### Frontend — Vercel
 
 The production frontend is deployed on Vercel:
 
-https://jcet-campus-iq.vercel.app/
+**https://jcet-campus-iq.vercel.app/**
 
 The frontend uses:
 
-VITE_API_URL=https://jcet-campusig-backend.onrender.com
+```env
+VITE_API_URL=https://jcet-campusiq-backend.onrender.com
+```
 
 Whenever the production environment variable or frontend code is changed, redeploy the Vercel project.
 
-Backend — Render
+### Backend — Render
 
 The FastAPI backend is deployed on Render:
 
-https://jcet-campusig-backend.onrender.com/
+**https://jcet-campusiq-backend.onrender.com/**
 
 The backend should be configured with the required production environment variables, including the PostgreSQL connection string.
 
-🔄 Frontend–Backend Flow
+## 🔄 Frontend–Backend Flow
 
+```text
 User
   ↓
 Vercel Frontend
@@ -308,99 +323,63 @@ Render FastAPI Backend
 PostgreSQL + pgvector
   ↓
 Institutional Knowledge
+```
 
-🔎 API Endpoints
+## 🔎 API Endpoints
 
-Method
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | `/api/health` | Check API availability |
+| GET | `/api/health/db` | Check database connectivity |
+| GET | `/docs` | Open FastAPI interactive documentation |
 
-Endpoint
-
-Purpose
-
-GET
-
-/api/health
-
-Check API availability
-
-GET
-
-/api/health/db
-
-Check database connectivity
-
-GET
-
-/docs
-
-Open FastAPI interactive documentation
-
-📚 Intended Knowledge Sources
+## 📚 Intended Knowledge Sources
 
 The platform is designed to work with official institutional information such as:
 
-College notices
-
-Academic information
-
-Regulations
-
-Policies
-
-Administrative information
-
-Institutional guidelines
-
-Approved college documents
+- College notices
+- Academic information
+- Regulations
+- Policies
+- Administrative information
+- Institutional guidelines
+- Approved college documents
 
 The goal is to provide answers grounded in available institutional sources rather than relying only on general-purpose knowledge.
 
-🔒 Security
+## 🔒 Security
 
-Never commit .env files containing secrets.
+- Never commit `.env` files containing secrets.
+- Keep database credentials private.
+- Store production secrets in deployment environment variables.
+- Use HTTPS for production services.
+- Restrict access to protected institutional information.
+- Validate uploaded documents and user input.
+- Do not expose private credentials in frontend code.
 
-Keep database credentials private.
+## 📌 Project Status
 
-Store production secrets in deployment environment variables.
-
-Use HTTPS for production services.
-
-Restrict access to protected institutional information.
-
-Validate uploaded documents and user input.
-
-Do not expose private credentials in frontend code.
-
-📌 Project Status
-
-JCET CampusIQ is currently in its Phase 1 foundation and prototype stage.
+JCET CampusIQ is currently in its **Phase 1 foundation and prototype stage**.
 
 The current implementation includes:
 
-Frontend application
-
-FastAPI backend
-
-PostgreSQL integration
-
-pgvector support
-
-Health monitoring
-
-Frontend deployment on Vercel
-
-Backend deployment on Render
-
-Environment-based configuration
+- Frontend application
+- FastAPI backend
+- PostgreSQL integration
+- pgvector support
+- Health monitoring
+- Frontend deployment on Vercel
+- Backend deployment on Render
+- Environment-based configuration
 
 The platform is being developed toward a complete institutional knowledge system with document ingestion, semantic retrieval, grounded responses, citations, and expanded access controls.
 
-👤 Author
+## 👤 Author
 
-Nidal Ahamed
+**Nidal Ahamed**
 
 Jawaharlal College of Engineering and Technology
 
-📄 License
+## 📄 License
 
 This project is currently developed as an academic/project prototype.
