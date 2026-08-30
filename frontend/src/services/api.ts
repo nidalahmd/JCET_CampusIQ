@@ -19,7 +19,7 @@ import type {
   DocumentUploadPayload,
 } from "../types/document";
 
-const API_BASE = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
+const API_BASE = (import.meta.env.VITE_API_URL || "https://jcet-campusiq-backend.onrender.com").replace(/\/+$/, "");
 
 class ApiError extends Error {
   status: number;

@@ -1,10 +1,39 @@
-JCET CampusIQ
+# JCET CampusIQ
 
-AI-powered institutional knowledge assistant for Jawaharlal College of Engineering and Technology (JCET).
+**AI-powered institutional knowledge assistant for Jawaharlal College of Engineering and Technology (JCET).**
 
 JCET CampusIQ is a Retrieval-Augmented Generation (RAG) platform designed to help students and staff find reliable information from official institutional documents through grounded, source-aware responses.
 
-🌐 Live Application
+## 🎯 Problem Statement
+
+Educational institutions generate and maintain a large amount of institutional information such as academic documents, notices, policies, guidelines, and other official resources. However, this information is often distributed across different sources, making it difficult for students and staff to quickly find reliable and relevant information.
+
+JCET CampusIQ aims to address this problem by providing a centralized institutional knowledge platform where users can access and interact with campus-related information through a structured and intelligent interface.
+
+### Key Problems Addressed
+
+- 📚 **Scattered Information**  
+  Institutional information may be distributed across multiple documents and sources, making it difficult to locate.
+
+- 🔎 **Difficulty Finding Relevant Information**  
+  Users may spend significant time manually searching through lengthy documents to find specific information.
+
+- 🤖 **Limited Intelligent Access**  
+  Traditional document repositories provide storage but do not offer an intelligent way to retrieve and understand relevant information.
+
+- 🏫 **Lack of a Centralized Knowledge Platform**  
+  Students and staff need a single platform for accessing reliable institutional knowledge.
+
+- 🔐 **Future Institutional Access Requirements**  
+  Different types of users may require different levels of access to institutional resources.
+
+### Proposed Solution
+
+JCET CampusIQ is designed as a centralized institutional knowledge platform that combines a modern web interface with a FastAPI backend, PostgreSQL database, and pgvector-based infrastructure. The platform is being developed to support document ingestion, semantic retrieval, source-based responses, citations, and controlled institutional access.
+
+The current implementation establishes the foundational architecture required to build these capabilities in later development phases.
+
+## 🌐 Live Application
 
 Frontend: https://jcet-campus-iq.vercel.app/
 
