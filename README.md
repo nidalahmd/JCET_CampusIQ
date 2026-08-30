@@ -110,6 +110,7 @@ GitHub — Source Code
 
 📁 Project Structure
 
+```text
 JCET_CampusIQ/
 │
 ├── backend/
@@ -141,6 +142,7 @@ JCET_CampusIQ/
 ├── SPEC.md
 ├── start.bat
 └── start.ps1
+```
 
 🚀 Local Setup
 
